@@ -1,0 +1,32 @@
+PODS:
+  - Block-KVO (2.2.1)
+  - FlatUIKit (1.2)
+  - FMDB (2.1):
+    - FMDB/standard
+  - FMDB/common (2.1)
+  - FMDB/standard (2.1):
+    - FMDB/common
+  - SoundManager (1.4)
+  - UIImage-Categories (0.0.1)
+  - UIView+FrameAdditions (0.0.1)
+  - ZBarSDK (1.3.1)
+
+DEPENDENCIES:
+  - Block-KVO
+  - FlatUIKit
+  - FMDB
+  - SoundManager
+  - UIImage-Categories
+  - UIView+FrameAdditions
+  - ZBarSDK (~> 1.3.1)
+
+SPEC CHECKSUMS:
+  Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
+  FlatUIKit: 43b2acaa6f4ef57539b51b00e4ce62d506e33e11
+  FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
+  SoundManager: 051da247b172d4fb098834d17c3c520857b10b3e
+  UIImage-Categories: d9f10e0afb9b281b35a3c2b0c7d16d1ca251d824
+  UIView+FrameAdditions: 74f908c61c7a87cf732c07b67add2a4ad8022f8d
+  ZBarSDK: 6ae54d2077fea894d6a24bd1d7035192c0a7471e
+
+COCOAPODS: 0.27.1

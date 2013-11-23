@@ -1,0 +1,7 @@
+pod 'ZBarSDK',  '~> 1.3.1';
+pod 'UIView+FrameAdditions';
+pod 'UIImage-Categories';
+pod 'FlatUIKit';
+pod 'FMDB';
+pod 'SoundManager';
+pod 'Block-KVO';

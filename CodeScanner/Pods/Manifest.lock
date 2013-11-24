@@ -10,6 +10,7 @@ PODS:
   - UIImage-Categories (0.0.1)
   - UIView+FrameAdditions (0.0.1)
   - ZBarSDK (1.3.1)
+  - ZXingObjC (2.2.2)
 
 DEPENDENCIES:
   - Block-KVO
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - UIImage-Categories
   - UIView+FrameAdditions
   - ZBarSDK (~> 1.3.1)
+  - ZXingObjC
 
 SPEC CHECKSUMS:
   Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
@@ -26,7 +28,8 @@ SPEC CHECKSUMS:
   FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
   SoundManager: 051da247b172d4fb098834d17c3c520857b10b3e
   UIImage-Categories: d9f10e0afb9b281b35a3c2b0c7d16d1ca251d824
-  UIView+FrameAdditions: 74f908c61c7a87cf732c07b67add2a4ad8022f8d
+  UIView+FrameAdditions: 29a4d424803f1c674671792c874f7951d6a64f97
   ZBarSDK: 6ae54d2077fea894d6a24bd1d7035192c0a7471e
+  ZXingObjC: f31f6b5a7479d48a753531a0fab0e0bb5aa92ab4
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.28.0

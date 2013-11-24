@@ -38,8 +38,9 @@
     NSDateFormatter *dateformat=[[NSDateFormatter alloc] init];
     [dateformat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     label_time.text =[dateformat stringFromDate:[NSDate dateWithTimeIntervalSince1970:bar_code.time.floatValue]];
+    
     symbol_image_view.image = [UIImage imageWithCGImage:[UIImage imageWithContentsOfFile:bar_code.imagePath].CGImage
-                                                  scale:1 orientation:UIImageOrientationRight];
+                                                  scale:1 orientation:UIImageOrientationUp];
     tf_count.text = [NSString stringWithFormat:@"%d",bar_code.count];
     step.value = (double)bar_code.count;
 }

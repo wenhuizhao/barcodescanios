@@ -5,3 +5,4 @@ pod 'FlatUIKit';
 pod 'FMDB';
 pod 'SoundManager';
 pod 'Block-KVO';
+pod 'ZXingObjC'

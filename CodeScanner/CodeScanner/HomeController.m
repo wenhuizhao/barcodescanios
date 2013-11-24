@@ -18,7 +18,7 @@
 #import "LastScanController.h"
 #import "ISqlite.h"
 #import "IDevice.h"
-
+#import "ZXingObjC.h"
 
 @interface HomeController () <ZBarReaderViewDelegate>
 
@@ -136,7 +136,7 @@
 
 #pragma overwrite;
 - (void) readerView: (ZBarReaderView*) readerView didReadSymbols: (ZBarSymbolSet*) syms fromImage: (UIImage*) image {
-    NSLog(@"IMAGE SIZE => %@",NSStringFromCGSize(image.size));
+    // QR-Code,EAN-13,CODE-39,CODE-93,I2/5
     
     [readerDelegate imagePickerController: (UIImagePickerController*)self didFinishPickingMediaWithInfo:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                                                          image,UIImagePickerControllerOriginalImage,
@@ -146,42 +146,78 @@
         NSLog(@"%@",s.typeName);
         sym = s;
     }
+    
+    NSLog(@"%d %@ %@",sym.type, sym.typeName,sym.data);
+    
+    /*识别二维码的类型*/
+    int format = -1;
+    
+    if ([sym.typeName isEqualToString:@"EAN-13"]) {
+        format = kBarcodeFormatEan13;
+    }
+    if ([sym.typeName isEqualToString:@"EAN-8"]) {
+        format = kBarcodeFormatEan8;
+    }
     if ([sym.typeName isEqualToString:@"QR-Code"]) {
+        format = kBarcodeFormatQRCode;
+    }
+    if ([sym.typeName isEqualToString:@"I2/5"]) {
+        format = kBarcodeFormatITF;
+    }
+    if ([sym.typeName isEqualToString:@"Codabar"]) {
+        format = kBarcodeFormatCodabar;
+    }
+    if ([sym.typeName isEqualToString:@"CODE-39"]) {
+        format = kBarcodeFormatCode39;
+    }
+    if ([sym.typeName isEqualToString:@"CODE-128"]) {
+        format = kBarcodeFormatCode128;
+    }
+    
+    if (format==-1) {
         return;
     }
     
-    NSLog(@"%@",NSStringFromCGRect(sym.bounds));
-    
-    /*特殊情况,取图失败*/
-    if (sym.bounds.size.width==0 || sym.bounds.size.height==0) {
-        NSLog(@"IMAGE ERROR");
-        return;
+    /*生成图片*/
+    NSError* error = nil;
+    ZXMultiFormatWriter* writer = [ZXMultiFormatWriter writer];
+    ZXBitMatrix* result = [writer encode:sym.data
+                                  format:format
+                                   width:320
+                                  height:200
+                                   error:&error];
+    if (result) {
+        CGImageRef generated_image = [[ZXImage imageWithMatrix:result] cgimage];
+         target_image = [UIImage imageWithCGImage:generated_image];
+    } else {
+        NSString* errorMessage = [error localizedDescription];
+        NSLog(@"%@",errorMessage);
     }
     
-    /*裁剪图片*/
-    CGRect r = sym.bounds;
-    if(r.size.width <= 32 && r.size.height <= 32)
-        return;
-    r = CGRectInset(r, -24, -24);
+///**修改需求
+//    /*特殊情况,取图失败*/
+//    if (sym.bounds.size.width==0 || sym.bounds.size.height==0) {
+//        NSLog(@"IMAGE ERROR");
+//        return;
+//    }
+//    
+//    /*裁剪图片*/
+//    CGRect r = sym.bounds;
+//    if(r.size.width <= 32 && r.size.height <= 32)
+//        return;
+//    r = CGRectInset(r, -24, -24);
+//    
+//    CGPoint cp = sym.bounds.origin;
+//    CGPoint p = CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
+//    p = CGPointMake((p.x * 3 + cp.x) / 4, (p.y * 3 + cp.y) / 4);
+//    
+//    CGRect cr = sym.bounds;
+//    r.origin = cr.origin;
+//    r.size.width = (r.size.width * 3 + cr.size.width) / 4;
+//    r.size.height = (r.size.height * 3 + cr.size.height) / 4;
+//    image = [image croppedImage:r];
+
     
-    CGPoint cp = sym.bounds.origin;
-    CGPoint p = CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
-    p = CGPointMake((p.x * 3 + cp.x) / 4, (p.y * 3 + cp.y) / 4);
-    
-    CGRect cr = sym.bounds;
-    r.origin = cr.origin;
-    r.size.width = (r.size.width * 3 + cr.size.width) / 4;
-    r.size.height = (r.size.height * 3 + cr.size.height) / 4;
-    
-//    int x = sym.bounds.size.width * 0.618;
-//    CGRect croprect = CGRectMake(sym.bounds.origin.x-x, sym.bounds.origin.y-x, sym.bounds.size.width+2*x, sym.bounds.size.height+2*x);
-//    CGRect croprect = CGRectMake(sym.bounds.origin.x, sym.bounds.origin.y, sym.bounds.size.height, sym.bounds.size.height);
-    image = [image croppedImage:r];
-    
-    /*旋转图片*/
-//    image = [[UIImage alloc] initWithCGImage: image.CGImage
-//                                       scale: 1.0
-//                                 orientation: UIImageOrientationRight];
     
     /*构建二维码模型*/
     BarCode *bar_code = [BarCode new];
@@ -194,15 +230,13 @@
     
     
     /*判断二维码是否已经扫描过*/
-    NSArray *bar_code_ids = [ISqlite findIdsByWhere:[NSString stringWithFormat:@"data = '%@';",bar_code.data] class:[BarCode class]];
+    NSArray *bar_code_ids = [ISqlite findIdsByWhere:[NSString stringWithFormat:@"data = '%@' and scanID = '%@';",bar_code.data,[[App sharedApp] getScanID]] class:[BarCode class]];
     BOOL scaned_flag = (bar_code_ids.count==0) ? NO : YES;
-    #warning 看需求了.先放着
-    scaned_flag = NO;
-    if (scaned_flag == YES) /*扫描过了*/{
-//        int tmp_id = [(NSNumber*)[bar_code_ids objectAtIndex:0] intValue];
-//        BarCode *tmp_bar_code = [ISqlite findById:tmp_id class:[BarCode class]];
-//        bar_code.count = tmp_bar_code.count;
-//        bar_code.id = tmp_id;
+    if (scaned_flag == YES) /*本次扫描过了*/{
+        int tmp_id = [(NSNumber*)[bar_code_ids objectAtIndex:0] intValue];
+        BarCode *tmp_bar_code = [ISqlite findById:tmp_id class:[BarCode class]];
+        bar_code.count = tmp_bar_code.count + 1;
+        bar_code.id = tmp_id;
     } else /*未扫描过*/{
         BarCode *last_bar_code = (BarCode*)[[ISqlite findAll:[BarCode class]] lastObject];
         bar_code.id = last_bar_code.id + 1;
@@ -211,13 +245,12 @@
     bar_code.scanID = [[App sharedApp] getScanID];
     
     /*保存信息*/
-    target_image = image;
     target_symbol = sym;
     
-    if (!image) {
+    if (!target_image) {
         return;
     } else /*保存图片*/{
-        [UIImagePNGRepresentation(image) writeToFile:bar_code.imagePath atomically:NO];
+        [UIImagePNGRepresentation(target_image) writeToFile:bar_code.imagePath atomically:NO];
     }
     
     /*播放音效*/

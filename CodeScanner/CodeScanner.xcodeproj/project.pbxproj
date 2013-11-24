@@ -274,13 +274,13 @@
 			children = (
 				1326101C182D0959003B756A /* HomeController.h */,
 				1326101D182D0959003B756A /* HomeController.m */,
-				182D502A1834A0E100474C01 /* Last */,
+				182D502A1834A0E100474C01 /* LastScan */,
 				13AE75FF1834F26000E67F10 /* BarCode */,
 			);
 			name = Scan;
 			sourceTree = "<group>";
 		};
-		182D502A1834A0E100474C01 /* Last */ = {
+		182D502A1834A0E100474C01 /* LastScan */ = {
 			isa = PBXGroup;
 			children = (
 				189BA00B18334BCE00165F6C /* LastScanController.h */,
@@ -290,7 +290,7 @@
 				189BA01D1833607C00165F6C /* LastScanCell.m */,
 				189BA01A1833606400165F6C /* LastScanCell.xib */,
 			);
-			name = Last;
+			name = LastScan;
 			sourceTree = "<group>";
 		};
 		184512BF1831BFD800E33397 /* xib */ = {

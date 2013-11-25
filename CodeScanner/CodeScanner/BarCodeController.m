@@ -14,6 +14,7 @@
 #import "ISqlite.h"
 #import "IDevice.h"
 #import "App.h"
+#import "SearchBarcodeController.h"
 
 @interface BarCodeController (){
     
@@ -31,6 +32,12 @@
     __weak IBOutlet UITextField *tf_count;
 }
 @synthesize bar_code;
+
+- (IBAction)search:(id)sender/*搜索*/{
+    SearchBarcodeController *s = [SearchBarcodeController search];
+    [self.navigationController pushViewController:s animated:YES];
+    s.bar_code = bar_code;
+}
 
 - (void)updateUserinterface/*更新用户界面*/{
     label_data.text = bar_code.data;

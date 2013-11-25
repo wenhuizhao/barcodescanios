@@ -16,4 +16,6 @@
 
 @property (nonatomic,strong) BarCode *bar_code;
 
++(SearchBarcodeController*) search;
+
 @end

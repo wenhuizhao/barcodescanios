@@ -7,10 +7,10 @@
 //
 
 #import "SearchBarcodeController.h"
-#import "XMLRPC.h"
 #import "BarCode.h"
+#import "App.h"
 
-@interface SearchBarcodeController ()<XMLRPCConnectionDelegate>
+@interface SearchBarcodeController ()
 
 @end
 
@@ -30,22 +30,24 @@
 }
 
 - (void)searchBarcode {
-    NSString *upc = @"123456";
+    double delayInSeconds = 0.1;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSString *host = @"http://api.upcdatabase.org/json/";
+        NSString *key = @"cefcc6a41cd57a3091134fd9b46596cd";
+        NSString *upc =         bar_code.data;
+        
+        NSString *url = [[[host stringByAppendingString:key] stringByAppendingString:@"/"] stringByAppendingString:upc];
+        NSString *resp = [NSString stringWithContentsOfURL:[NSURL URLWithString:url] encoding:NSUTF8StringEncoding error:nil];
+        [[App sharedApp] alert:resp];
+
+    });
+    
+    
+    
     // 判断是否是UPC
     
     // xml rpc 方式查询
-    NSURL *URL = [NSURL URLWithString: @"http://www.upcdatabase.com/xmlrpc"];
-    XMLRPCRequest *request = [[XMLRPCRequest alloc] initWithURL: URL];
-    XMLRPCConnectionManager *manager = [XMLRPCConnectionManager sharedManager];
-    
-    
-    NSArray *params = [NSArray arrayWithObjects:@"<value><upc_key>e4a741a3abe480a1007bf8a1460d99c3698670b7</upc_key></value>",@"<value><upc>123456789012</upc></value>", nil];
-    
-    [request setMethod: @"lookup" withParameters: params];
-    
-    NSLog(@"Request body: %@", [request body]);
-    
-    [manager spawnConnectionWithXMLRPCRequest: request delegate: self];
     
     // 更新界面信息
     
@@ -64,9 +66,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma XMLRPCConnectionDelegate
-- (void)request: (XMLRPCRequest *)request didReceiveResponse: (XMLRPCResponse *)response{
-    NSLog(@"%@",[response body]);
-}
 
 @end

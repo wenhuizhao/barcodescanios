@@ -8,6 +8,7 @@
 
 #import "BrowseController.h"
 #import "BarCodeController.h"
+#import "SearchBarcodeController.h"
 
 @interface BrowseController ()
 
@@ -20,6 +21,12 @@
 }
 
 @synthesize bar_codes,index_of_bar_code;
+
+-(void) goSearch{
+    SearchBarcodeController *s = [SearchBarcodeController search];
+    [self.navigationController pushViewController:s animated:YES];
+    s.bar_code = bar_code_controller.bar_code;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -50,6 +57,9 @@
             [bar_code_controller showDeleteButton:NO];
             [bar_code_controller showSaveButton:NO];
             [bar_code_controller showStep:NO];
+            // 重定位search click 事件
+            [bar_code_controller.button_search addTarget:self action:@selector(goSearch) forControlEvents:UIControlEventTouchUpInside];
+            
         }
         bar_code_controller.bar_code = [bar_codes objectAtIndex:[index_of_bar_code intValue]];
         [self.view addSubview:left_button];

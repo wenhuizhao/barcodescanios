@@ -6,12 +6,10 @@ PODS:
   - FMDB/common (2.1)
   - FMDB/standard (2.1):
     - FMDB/common
-  - NSData+Base64 (1.0.0)
+  - SBJson (3.2)
   - SoundManager (1.4)
   - UIImage-Categories (0.0.1)
   - UIView+FrameAdditions (0.0.1)
-  - xmlrpc (2.3.3):
-    - NSData+Base64 (~> 1.0.0)
   - ZBarSDK (1.3.1)
   - ZXingObjC (2.2.2)
 
@@ -19,10 +17,10 @@ DEPENDENCIES:
   - Block-KVO
   - FlatUIKit
   - FMDB
+  - SBJson
   - SoundManager
   - UIImage-Categories
   - UIView+FrameAdditions
-  - xmlrpc
   - ZBarSDK (~> 1.3.1)
   - ZXingObjC
 
@@ -30,11 +28,10 @@ SPEC CHECKSUMS:
   Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
   FlatUIKit: 43b2acaa6f4ef57539b51b00e4ce62d506e33e11
   FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
-  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
+  SBJson: abc2bf2baef456d5dae213f9826fe2b6fdf19861
   SoundManager: 051da247b172d4fb098834d17c3c520857b10b3e
   UIImage-Categories: d9f10e0afb9b281b35a3c2b0c7d16d1ca251d824
   UIView+FrameAdditions: 29a4d424803f1c674671792c874f7951d6a64f97
-  xmlrpc: 9ebaa6298ce90ff0c3c30404681f2030bdde54db
   ZBarSDK: 6ae54d2077fea894d6a24bd1d7035192c0a7471e
   ZXingObjC: f31f6b5a7479d48a753531a0fab0e0bb5aa92ab4
 

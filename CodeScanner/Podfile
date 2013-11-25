@@ -6,4 +6,4 @@ pod 'FMDB';
 pod 'SoundManager';
 pod 'Block-KVO';
 pod 'ZXingObjC'
-pod 'xmlrpc'
+pod 'SBJson'

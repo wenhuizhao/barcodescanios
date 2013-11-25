@@ -31,7 +31,7 @@
     __weak IBOutlet UIStepper *step;
     __weak IBOutlet UITextField *tf_count;
 }
-@synthesize bar_code;
+@synthesize bar_code,button_search;
 
 - (IBAction)search:(id)sender/*搜索*/{
     SearchBarcodeController *s = [SearchBarcodeController search];

@@ -26,6 +26,8 @@
 		1391EB3218365D9200BA0189 /* AllBarCodesNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1391EB3118365D9200BA0189 /* AllBarCodesNavigationController.m */; };
 		13AE76081834FC1000E67F10 /* BrowseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE76061834FC1000E67F10 /* BrowseController.m */; };
 		13AE76091834FC1000E67F10 /* BrowseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AE76071834FC1000E67F10 /* BrowseController.xib */; };
+		180ACAB11843267100A817F7 /* SearchBarcodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180ACAAF1843267100A817F7 /* SearchBarcodeController.m */; };
+		180ACAB21843267100A817F7 /* SearchBarcodeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180ACAB01843267100A817F7 /* SearchBarcodeController.xib */; };
 		18430F90183077720019DBDC /* AllSymbolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18430F8F183077720019DBDC /* AllSymbolController.m */; };
 		18430F931830B9A10019DBDC /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18430F921830B9A10019DBDC /* TabBarController.m */; };
 		18430F9D1830BBB50019DBDC /* BarCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18430F9B1830BBB50019DBDC /* BarCodeController.m */; };
@@ -87,6 +89,9 @@
 		13AE76051834FC1000E67F10 /* BrowseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseController.h; sourceTree = "<group>"; };
 		13AE76061834FC1000E67F10 /* BrowseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseController.m; sourceTree = "<group>"; };
 		13AE76071834FC1000E67F10 /* BrowseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseController.xib; sourceTree = "<group>"; };
+		180ACAAE1843267100A817F7 /* SearchBarcodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarcodeController.h; sourceTree = "<group>"; };
+		180ACAAF1843267100A817F7 /* SearchBarcodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarcodeController.m; sourceTree = "<group>"; };
+		180ACAB01843267100A817F7 /* SearchBarcodeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarcodeController.xib; sourceTree = "<group>"; };
 		18430F8E183077720019DBDC /* AllSymbolController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllSymbolController.h; sourceTree = "<group>"; };
 		18430F8F183077720019DBDC /* AllSymbolController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllSymbolController.m; sourceTree = "<group>"; };
 		18430F911830B9A10019DBDC /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
@@ -274,10 +279,21 @@
 			children = (
 				1326101C182D0959003B756A /* HomeController.h */,
 				1326101D182D0959003B756A /* HomeController.m */,
+				180ACAB31843268200A817F7 /* SearchBarcode */,
 				182D502A1834A0E100474C01 /* LastScan */,
 				13AE75FF1834F26000E67F10 /* BarCode */,
 			);
 			name = Scan;
+			sourceTree = "<group>";
+		};
+		180ACAB31843268200A817F7 /* SearchBarcode */ = {
+			isa = PBXGroup;
+			children = (
+				180ACAAE1843267100A817F7 /* SearchBarcodeController.h */,
+				180ACAAF1843267100A817F7 /* SearchBarcodeController.m */,
+				180ACAB01843267100A817F7 /* SearchBarcodeController.xib */,
+			);
+			name = SearchBarcode;
 			sourceTree = "<group>";
 		};
 		182D502A1834A0E100474C01 /* LastScan */ = {
@@ -426,6 +442,7 @@
 				189BA00718331FE500165F6C /* BarCodes.sqlite in Resources */,
 				13261020182D0959003B756A /* Images.xcassets in Resources */,
 				189BA01B1833606400165F6C /* LastScanCell.xib in Resources */,
+				180ACAB21843267100A817F7 /* SearchBarcodeController.xib in Resources */,
 				186365E818321E3600B94EB5 /* scan_finished_sound.mp3 in Resources */,
 				13AE76091834FC1000E67F10 /* BrowseController.xib in Resources */,
 				189BA00F18334BCE00165F6C /* LastScanController.xib in Resources */,
@@ -494,6 +511,7 @@
 				1391EB3218365D9200BA0189 /* AllBarCodesNavigationController.m in Sources */,
 				1326101E182D0959003B756A /* HomeController.m in Sources */,
 				184512C61831CE6200E33397 /* ISqlite.m in Sources */,
+				180ACAB11843267100A817F7 /* SearchBarcodeController.m in Sources */,
 				1846BDE9183456F200EEF7D6 /* BarCodeCollectionController.m in Sources */,
 				184512CC1831D4FF00E33397 /* BarCode.m in Sources */,
 				18430F931830B9A10019DBDC /* TabBarController.m in Sources */,

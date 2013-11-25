@@ -16,7 +16,7 @@
 @synthesize symbol_image_view,label_data,label_time,label_type;
 
 + (float) height{
-    return 200.f;
+    return 224.f;
 }
 - (void) setBarCode:(BarCode*) sender{
     bar_code = sender;
@@ -29,8 +29,9 @@
     self.symbol_image_view.image = img;
     
     
-    self.label_type .text = bar_code.type;
-    self.label_data.text = bar_code.data;
+    self.label_type .text = [@"Type: " stringByAppendingString:[NSString stringWithFormat:@"%@",bar_code.type]];
+    self.label_data.text = [@"Data: " stringByAppendingString:[NSString stringWithFormat:@"%@",bar_code.data]];
+    self.label_count.text = [@"Count: " stringByAppendingString:[NSString stringWithFormat:@"%d",bar_code.count]];
     
     NSTimeInterval seconds = [bar_code.time floatValue];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];

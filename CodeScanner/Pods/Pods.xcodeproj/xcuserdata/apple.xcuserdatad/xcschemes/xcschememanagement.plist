@@ -8,147 +8,111 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods-FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Pods-FlatUIKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Pods-NSData+Base64.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-SoundManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods-UIImage-Categories.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>Pods-UIView+FrameAdditions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>Pods-ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Pods-ZXingObjC.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-xmlrpc.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09BC55A604E9477395F9F450</key>
+		<key>08DB980149964B02A7696847</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>19F86BB634224E9F9D9E8CF2</key>
+		<key>0D174E98590C4399A1D04167</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1BBF2A70AA4B400E8BEAC5BD</key>
+		<key>277230722F5D4396A7D167B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>394D5BFED06D4C4CA31B782A</key>
+		<key>3A2FCBBBCF33476FBC214BF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4477B822E47141E6ADE9AB46</key>
+		<key>8021B00C96704423AF1EFAB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E5E0687B9C848C98039C33F</key>
+		<key>890758122DCC40E59CF66CCE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>63B574A2872841049898C88A</key>
+		<key>9360E1D7581041B18C0171E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>785FFE36A9A843D88A97C5D7</key>
+		<key>9E512BF373854852AFC9B715</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C1854E0D2A6493EB273D9DC</key>
+		<key>B47FD42257B64D64A3B32445</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96F12147CEA54E5E8B7ADED6</key>
+		<key>E564266E754D455EA11AFCD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ACCEDFBB29E24C888961BDBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B1FE28B5CB194EC19D975404</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B4C1DDD7716747248FEB6417</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B914ECAF1D534CA3963CB86E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EC914DFF2F834682B7438E94</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F3A656CC2D4D4A05A438893F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FFC05E31C61146D3B8D265C2</key>
+		<key>F5C8F3844095423C88D75A47</key>
 		<dict>
 			<key>primary</key>
 			<true/>

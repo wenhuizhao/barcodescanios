@@ -16,18 +16,17 @@
 @synthesize symbol_image_view,label_data,label_time,label_type;
 
 + (float) height{
-    return 160.f;
+    return 200.f;
 }
 - (void) setBarCode:(BarCode*) sender{
     bar_code = sender;
     
     /*加载图片*/
-//    NSData *img_data = [NSData dataWithContentsOfFile:bar_code.imagePath];
-//    UIImage *img = [UIImage imageWithCGImage:[UIImage imageWithData:img_data].CGImage
-//                                       scale:1.0f
-//                                 orientation:UIImageOrientationRight];
-//    self.symbol_image_view.image = img;
-    
+    NSData *img_data = [NSData dataWithContentsOfFile:bar_code.imagePath];
+    UIImage *img = [UIImage imageWithCGImage:[UIImage imageWithData:img_data].CGImage
+                                       scale:1.0f
+                                 orientation:UIImageOrientationUp];
+    self.symbol_image_view.image = img;
     
     
     self.label_type .text = bar_code.type;

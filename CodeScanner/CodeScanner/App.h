@@ -12,6 +12,8 @@
 
 +(App*) sharedApp;
 
+-(void) alert:(NSString*)sender;
+
 -(void) startNewScan;
 
 -(NSString*) getScanID;

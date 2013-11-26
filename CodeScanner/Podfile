@@ -7,3 +7,4 @@ pod 'SoundManager';
 pod 'Block-KVO';
 pod 'ZXingObjC'
 pod 'xmlrpc'
+pod 'SVProgressHUD'

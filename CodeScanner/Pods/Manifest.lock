@@ -8,6 +8,7 @@ PODS:
     - FMDB/common
   - NSData+Base64 (1.0.0)
   - SoundManager (1.4)
+  - SVProgressHUD (1.0)
   - UIImage-Categories (0.0.1)
   - UIView+FrameAdditions (0.0.1)
   - xmlrpc (2.3.3):
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - FlatUIKit
   - FMDB
   - SoundManager
+  - SVProgressHUD
   - UIImage-Categories
   - UIView+FrameAdditions
   - xmlrpc
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
   NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
   SoundManager: 051da247b172d4fb098834d17c3c520857b10b3e
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   UIImage-Categories: d9f10e0afb9b281b35a3c2b0c7d16d1ca251d824
   UIView+FrameAdditions: 29a4d424803f1c674671792c874f7951d6a64f97
   xmlrpc: 9ebaa6298ce90ff0c3c30404681f2030bdde54db

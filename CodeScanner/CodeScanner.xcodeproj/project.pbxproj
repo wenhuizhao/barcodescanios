@@ -39,6 +39,7 @@
 		1846BDE9183456F200EEF7D6 /* BarCodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846BDE8183456F200EEF7D6 /* BarCodeCollectionController.m */; };
 		1846BDEC183458EC00EEF7D6 /* BarCodeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846BDEB183458EC00EEF7D6 /* BarCodeCollectionCell.m */; };
 		186365E818321E3600B94EB5 /* scan_finished_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 186365E718321E3600B94EB5 /* scan_finished_sound.mp3 */; };
+		188C49B118445E01001D87D1 /* ProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C49B018445E01001D87D1 /* ProductInfo.m */; };
 		189BA0051833127E00165F6C /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 189BA0041833127E00165F6C /* App.m */; };
 		189BA00718331FE500165F6C /* BarCodes.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 189BA00618331FE500165F6C /* BarCodes.sqlite */; };
 		189BA00E18334BCE00165F6C /* LastScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189BA00C18334BCE00165F6C /* LastScanController.m */; };
@@ -112,6 +113,8 @@
 		1846BDEA183458EC00EEF7D6 /* BarCodeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeCollectionCell.h; sourceTree = "<group>"; };
 		1846BDEB183458EC00EEF7D6 /* BarCodeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeCollectionCell.m; sourceTree = "<group>"; };
 		186365E718321E3600B94EB5 /* scan_finished_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scan_finished_sound.mp3; sourceTree = "<group>"; };
+		188C49AF18445E01001D87D1 /* ProductInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfo.h; sourceTree = "<group>"; };
+		188C49B018445E01001D87D1 /* ProductInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfo.m; sourceTree = "<group>"; };
 		189BA0031833127E00165F6C /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		189BA0041833127E00165F6C /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		189BA00618331FE500165F6C /* BarCodes.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarCodes.sqlite; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				180ACAAE1843267100A817F7 /* SearchBarcodeController.h */,
 				180ACAAF1843267100A817F7 /* SearchBarcodeController.m */,
 				180ACAB01843267100A817F7 /* SearchBarcodeController.xib */,
+				188C49AF18445E01001D87D1 /* ProductInfo.h */,
+				188C49B018445E01001D87D1 /* ProductInfo.m */,
 			);
 			name = SearchBarcode;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				184512C61831CE6200E33397 /* ISqlite.m in Sources */,
 				180ACAB11843267100A817F7 /* SearchBarcodeController.m in Sources */,
 				1846BDE9183456F200EEF7D6 /* BarCodeCollectionController.m in Sources */,
+				188C49B118445E01001D87D1 /* ProductInfo.m in Sources */,
 				184512CC1831D4FF00E33397 /* BarCode.m in Sources */,
 				18430F931830B9A10019DBDC /* TabBarController.m in Sources */,
 				13261018182D0958003B756A /* AppDelegate.m in Sources */,

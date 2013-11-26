@@ -14,5 +14,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "UIView+FrameAdditions.h"
+    #import <SVProgressHUD/SVProgressHUD.h>
     #import <Block-KVO/MTKObserving.h>
 #endif

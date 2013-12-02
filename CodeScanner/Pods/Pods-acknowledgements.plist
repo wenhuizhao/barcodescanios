@@ -29,6 +29,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>All text and design is copyright © 2012 Paypal.
+
+All rights reserved.
+</string>
+			<key>Title</key>
+			<string>CardIO</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>If you are using fmdb in your project, I'd love to hear about it.  Let me 
 know at gus@flyingmeat.com.
 

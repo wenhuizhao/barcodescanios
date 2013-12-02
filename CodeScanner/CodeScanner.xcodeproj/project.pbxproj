@@ -39,6 +39,9 @@
 		1846BDE9183456F200EEF7D6 /* BarCodeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846BDE8183456F200EEF7D6 /* BarCodeCollectionController.m */; };
 		1846BDEC183458EC00EEF7D6 /* BarCodeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846BDEB183458EC00EEF7D6 /* BarCodeCollectionCell.m */; };
 		186365E818321E3600B94EB5 /* scan_finished_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 186365E718321E3600B94EB5 /* scan_finished_sound.mp3 */; };
+		186DFF6C184C1F2200A5D766 /* CardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186DFF6B184C1F2200A5D766 /* CardController.m */; };
+		186DFF70184C235400A5D766 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 186DFF6F184C235400A5D766 /* Card.m */; };
+		186DFF73184C588D00A5D766 /* IZValueSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186DFF72184C588D00A5D766 /* IZValueSelectorView.m */; };
 		188C49B118445E01001D87D1 /* ProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C49B018445E01001D87D1 /* ProductInfo.m */; };
 		189BA0051833127E00165F6C /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 189BA0041833127E00165F6C /* App.m */; };
 		189BA00718331FE500165F6C /* BarCodes.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 189BA00618331FE500165F6C /* BarCodes.sqlite */; };
@@ -113,6 +116,12 @@
 		1846BDEA183458EC00EEF7D6 /* BarCodeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeCollectionCell.h; sourceTree = "<group>"; };
 		1846BDEB183458EC00EEF7D6 /* BarCodeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeCollectionCell.m; sourceTree = "<group>"; };
 		186365E718321E3600B94EB5 /* scan_finished_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scan_finished_sound.mp3; sourceTree = "<group>"; };
+		186DFF6A184C1F2200A5D766 /* CardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardController.h; sourceTree = "<group>"; };
+		186DFF6B184C1F2200A5D766 /* CardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardController.m; sourceTree = "<group>"; };
+		186DFF6E184C235400A5D766 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		186DFF6F184C235400A5D766 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		186DFF71184C588D00A5D766 /* IZValueSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IZValueSelectorView.h; sourceTree = "<group>"; };
+		186DFF72184C588D00A5D766 /* IZValueSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IZValueSelectorView.m; sourceTree = "<group>"; };
 		188C49AF18445E01001D87D1 /* ProductInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductInfo.h; sourceTree = "<group>"; };
 		188C49B018445E01001D87D1 /* ProductInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductInfo.m; sourceTree = "<group>"; };
 		189BA0031833127E00165F6C /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
@@ -193,6 +202,7 @@
 			children = (
 				13261016182D0958003B756A /* AppDelegate.h */,
 				13261017182D0958003B756A /* AppDelegate.m */,
+				13261019182D0959003B756A /* Main.storyboard */,
 				189BA0031833127E00165F6C /* App.h */,
 				189BA0041833127E00165F6C /* App.m */,
 				18430F911830B9A10019DBDC /* TabBarController.h */,
@@ -200,9 +210,9 @@
 				1846BDED18345E2700EEF7D6 /* BarCodes */,
 				13AE760B1834FED800E67F10 /* Scan */,
 				1391EB2F183649FE00BA0189 /* AllScans */,
+				186DFF6D184C1F2A00A5D766 /* Card */,
 				18430F8E183077720019DBDC /* AllSymbolController.h */,
 				18430F8F183077720019DBDC /* AllSymbolController.m */,
-				13261019182D0959003B756A /* Main.storyboard */,
 				189BA020183361F000165F6C /* Model */,
 				184512C01831C11700E33397 /* Exten */,
 				184512BF1831BFD800E33397 /* xib */,
@@ -326,6 +336,8 @@
 			children = (
 				184512C21831CE6200E33397 /* ISqlModel.h */,
 				184512C11831CE6200E33397 /* ISqlModel.m */,
+				186DFF71184C588D00A5D766 /* IZValueSelectorView.h */,
+				186DFF72184C588D00A5D766 /* IZValueSelectorView.m */,
 				184512C41831CE6200E33397 /* ISqlite.h */,
 				184512C31831CE6200E33397 /* ISqlite.m */,
 				184512C81831CEE100E33397 /* IDevice.h */,
@@ -348,11 +360,22 @@
 			name = BarCodes;
 			sourceTree = "<group>";
 		};
+		186DFF6D184C1F2A00A5D766 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				186DFF6A184C1F2200A5D766 /* CardController.h */,
+				186DFF6B184C1F2200A5D766 /* CardController.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
 		189BA020183361F000165F6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				184512CA1831D4FF00E33397 /* BarCode.h */,
 				184512CB1831D4FF00E33397 /* BarCode.m */,
+				186DFF6E184C235400A5D766 /* Card.h */,
+				186DFF6F184C235400A5D766 /* Card.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -516,15 +539,18 @@
 				1391EB3218365D9200BA0189 /* AllBarCodesNavigationController.m in Sources */,
 				1326101E182D0959003B756A /* HomeController.m in Sources */,
 				184512C61831CE6200E33397 /* ISqlite.m in Sources */,
+				186DFF70184C235400A5D766 /* Card.m in Sources */,
 				180ACAB11843267100A817F7 /* SearchBarcodeController.m in Sources */,
 				1846BDE9183456F200EEF7D6 /* BarCodeCollectionController.m in Sources */,
 				188C49B118445E01001D87D1 /* ProductInfo.m in Sources */,
 				184512CC1831D4FF00E33397 /* BarCode.m in Sources */,
 				18430F931830B9A10019DBDC /* TabBarController.m in Sources */,
+				186DFF73184C588D00A5D766 /* IZValueSelectorView.m in Sources */,
 				13261018182D0958003B756A /* AppDelegate.m in Sources */,
 				189BA0051833127E00165F6C /* App.m in Sources */,
 				189BA01E1833607C00165F6C /* LastScanCell.m in Sources */,
 				13261014182D0958003B756A /* main.m in Sources */,
+				186DFF6C184C1F2200A5D766 /* CardController.m in Sources */,
 				1391EB2E1836492300BA0189 /* AllScansCell.m in Sources */,
 				13AE76081834FC1000E67F10 /* BrowseController.m in Sources */,
 			);

@@ -1,5 +1,6 @@
 PODS:
   - Block-KVO (2.2.1)
+  - CardIO (3.4.0)
   - FlatUIKit (1.2)
   - FMDB (2.1):
     - FMDB/standard
@@ -18,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Block-KVO
+  - CardIO
   - FlatUIKit
   - FMDB
   - SoundManager
@@ -30,6 +32,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Block-KVO: 7b298fb4617e948179b4c7725569feff7bd58337
+  CardIO: 0a892c73eee7d2649cc281f84fbd113916f0c9a7
   FlatUIKit: 43b2acaa6f4ef57539b51b00e4ce62d506e33e11
   FMDB: 3fd5aaf632ca4ed39e3f101e0398504e6d5b0918
   NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28

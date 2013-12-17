@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="button_rescan" destination="TZG-nc-ycW" id="6pY-Sk-faT"/>
                 <outlet property="button_save" destination="iTn-Ho-V9T" id="C4F-Q2-p0z"/>
+                <outlet property="button_search" destination="Kye-9s-Ln2" id="k5P-50-ZTF"/>
                 <outlet property="label_data" destination="THb-QS-C3L" id="7UP-zz-0QA"/>
                 <outlet property="label_time" destination="o4Z-4D-dAX" id="Wo0-Rn-Zux"/>
                 <outlet property="label_type" destination="E3D-cw-V11" id="eC2-Nx-HQm"/>
@@ -37,7 +38,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iTn-Ho-V9T">
-                    <rect key="frame" x="16" y="292" width="145" height="44"/>
+                    <rect key="frame" x="17" y="275" width="145" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="入库" backgroundImage="button-0">
@@ -62,7 +63,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TZG-nc-ycW">
-                    <rect key="frame" x="163" y="292" width="144" height="44"/>
+                    <rect key="frame" x="164" y="325" width="144" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                     <state key="normal" title="丢弃" backgroundImage="button-1">
@@ -83,7 +84,7 @@
                     <rect key="frame" x="206" y="234" width="94" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </stepper>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="xFv-Zu-zZE">
+                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="xFv-Zu-zZE">
                     <rect key="frame" x="101" y="236" width="97" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -117,6 +118,17 @@
                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kye-9s-Ln2">
+                    <rect key="frame" x="163" y="275" width="145" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="查询" backgroundImage="button-0">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="search:" destination="-1" eventType="touchUpInside" id="XwJ-s3-BrW"/>
+                    </connections>
+                </button>
             </subviews>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </scrollView>

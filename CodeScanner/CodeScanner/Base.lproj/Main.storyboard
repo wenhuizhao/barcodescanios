@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OF9-NZ-nna">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OF9-NZ-nna">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
@@ -142,6 +142,75 @@
             </objects>
             <point key="canvasLocation" x="-95" y="379"/>
         </scene>
+        <!--Navigation Controller - 卡片管理-->
+        <scene sceneID="Qwy-in-SuU">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="RLM-hY-Pgw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="卡片管理" image="credit-card-ico" id="Tox-5K-yE1"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Wgn-eJ-Wcp">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8xf-Qg-sLK" kind="relationship" relationship="rootViewController" id="0bH-ke-wkG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odg-I4-Bqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-524" y="1810"/>
+        </scene>
+        <!--Card Controller - 卡片管理-->
+        <scene sceneID="UkV-Cf-qSl">
+            <objects>
+                <viewController id="8xf-Qg-sLK" customClass="CardController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CTE-gY-Bcq"/>
+                        <viewControllerLayoutGuide type="bottom" id="VYB-eJ-leO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3zX-UX-Iqk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddA-bU-0uv">
+                                <rect key="frame" x="288" y="66" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="camera">
+                                    <color key="titleColor" red="0.22883393802251395" green="0.69019514119353986" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="inputWithCamera:" destination="8xf-Qg-sLK" eventType="touchUpInside" id="b3t-pS-Evy"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" image="tip_bg" translatesAutoresizingMaskIntoConstraints="NO" id="QhZ-pT-w2i">
+                                <rect key="frame" x="0.0" y="386" width="48" height="69"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-ZC-fiu" customClass="IZValueSelectorView">
+                                <rect key="frame" x="48" y="386" width="272" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AeP-ZC-fiu" secondAttribute="trailing" id="Len-6w-Le9"/>
+                            <constraint firstAttribute="trailing" secondItem="ddA-bU-0uv" secondAttribute="trailing" constant="2" id="UjX-bA-jK5"/>
+                            <constraint firstItem="VYB-eJ-leO" firstAttribute="top" secondItem="AeP-ZC-fiu" secondAttribute="bottom" id="Zyi-di-bMT"/>
+                            <constraint firstItem="VYB-eJ-leO" firstAttribute="top" secondItem="QhZ-pT-w2i" secondAttribute="bottom" id="r91-0p-vA4"/>
+                            <constraint firstItem="ddA-bU-0uv" firstAttribute="top" secondItem="CTE-gY-Bcq" secondAttribute="bottom" constant="2" id="xHK-a3-iGu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="卡片管理" id="Pl8-oV-cOw"/>
+                    <connections>
+                        <outlet property="value_select_view" destination="AeP-ZC-fiu" id="5MH-Se-b2c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJl-SC-nJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-77" y="1810"/>
+        </scene>
         <!--Navigation Controller - 所有扫描-->
         <scene sceneID="sZL-oH-e60">
             <objects>
@@ -229,6 +298,7 @@
                         <segue destination="oBJ-Ov-sKh" kind="relationship" relationship="viewControllers" id="Q23-5e-rSM"/>
                         <segue destination="2be-eb-z5X" kind="relationship" relationship="viewControllers" id="58r-gg-QIt"/>
                         <segue destination="mG7-Ih-ro6" kind="relationship" relationship="viewControllers" id="ZS9-hT-747"/>
+                        <segue destination="RLM-hY-Pgw" kind="relationship" relationship="viewControllers" id="qUQ-1Z-Pne"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siz-A1-8bZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,8 +328,11 @@
         <image name="bar-code" width="30" height="30"/>
         <image name="barcode" width="95" height="95"/>
         <image name="barcodes" width="115" height="115"/>
+        <image name="camera" width="30" height="30"/>
+        <image name="credit-card-ico" width="30" height="30"/>
         <image name="history" width="30" height="30"/>
         <image name="setting" width="30" height="30"/>
+        <image name="tip_bg" width="48" height="69"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

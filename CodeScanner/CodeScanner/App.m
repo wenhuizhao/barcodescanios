@@ -38,4 +38,9 @@
 -(int) getCurrentSymbolCount{
     return [ISqlite findIdsByWhere:[NSString stringWithFormat:@"scanID = '%@';",scanID] class:[BarCode class]].count;
 }
+
+-(void) alert:(NSString*) sender{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:sender delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+}
 @end

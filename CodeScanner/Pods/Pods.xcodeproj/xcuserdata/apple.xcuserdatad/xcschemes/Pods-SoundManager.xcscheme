@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   version = "1.3"
-   LastUpgradeVersion = "0500">
+   LastUpgradeVersion = "0500"
+   version = "1.3">
    <BuildAction
       buildImplicitDependencies = "YES"
       parallelizeBuildables = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForAnalyzing = "YES"
-            buildForArchiving = "YES"
-            buildForProfiling = "YES"
             buildForRunning = "YES"
-            buildForTesting = "YES">
+            buildForProfiling = "YES"
+            buildForTesting = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BlueprintIdentifier = "63B574A2872841049898C88A"
-               BlueprintName = "Pods-SoundManager"
                BuildableName = "libPods-SoundManager.a"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BlueprintName = "Pods-SoundManager"
+               BlueprintIdentifier = "E72A07B965A4459EB1836DE2"
                BuildableIdentifier = "primary">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
    </TestAction>
    <LaunchAction
+      useCustomWorkingDirectory = "NO"
+      allowLocationSimulation = "YES"
+      ignoresPersistentStateOnLaunch = "NO"
+      buildConfiguration = "Debug"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      ignoresPersistentStateOnLaunch = "NO"
-      launchStyle = "0"
       debugDocumentVersioning = "YES"
-      buildConfiguration = "Debug"
-      allowLocationSimulation = "YES"
-      useCustomWorkingDirectory = "NO">
+      launchStyle = "0">
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      useCustomWorkingDirectory = "NO"
       savedToolIdentifier = ""
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      debugDocumentVersioning = "YES"
       buildConfiguration = "Release"
-      useCustomWorkingDirectory = "NO">
+      debugDocumentVersioning = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

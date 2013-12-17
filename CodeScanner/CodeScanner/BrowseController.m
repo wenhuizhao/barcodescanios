@@ -8,6 +8,7 @@
 
 #import "BrowseController.h"
 #import "BarCodeController.h"
+#import "SearchBarcodeController.h"
 
 @interface BrowseController ()
 
@@ -21,12 +22,52 @@
 
 @synthesize bar_codes,index_of_bar_code;
 
+-(void) goSearch{
+    SearchBarcodeController *s = [SearchBarcodeController search];
+    [self.navigationController pushViewController:s animated:YES];
+    s.bar_code = bar_code_controller.bar_code;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
+}
+
+- (void)gestureHandle:(UISwipeGestureRecognizer*) sender{
+    if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+        [self left:nil];
+    } else if (sender.direction == UISwipeGestureRecognizerDirectionLeft){
+        [self right:nil];
+    }
+}
+
+- (void)update{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        // animation
+        self.view.alpha = 0.6;
+    } completion:^(BOOL finished) {
+        // result
+        NSLog(@"%d",[self.index_of_bar_code integerValue]);
+        if (!bar_code_controller) {
+            bar_code_controller = [[BarCodeController alloc] initWithNibName:[BarCodeController description] bundle:nil];
+            [self.view addSubview:bar_code_controller.view];
+            [bar_code_controller showDeleteButton:NO];
+            [bar_code_controller showSaveButton:NO];
+            [bar_code_controller showStep:NO];
+            // 重定位search click 事件
+            [bar_code_controller.button_search addTarget:self action:@selector(goSearch) forControlEvents:UIControlEventTouchUpInside];
+            
+        }
+        bar_code_controller.bar_code = [bar_codes objectAtIndex:[index_of_bar_code intValue]];
+        [self.view addSubview:left_button];
+        [self.view addSubview:right_button];
+
+        self.view.alpha = 1;
+    }];
+
 }
 
 - (IBAction)right:(id)sender/*向右滑动*/{
@@ -46,22 +87,26 @@
 - (void) viewDidLoad{
     [super viewDidLoad];
 //    [(UIScrollView*)self.view setContentSize:(CGSize){320,800}];
+    
+    // bg
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-pattern"]];
     // KVO
     MTKObservePropertySelf(index_of_bar_code, NSNumber*, {
-        NSLog(@"%d",[self.index_of_bar_code integerValue]);
-        if (!bar_code_controller) {
-            bar_code_controller = [[BarCodeController alloc] initWithNibName:[BarCodeController description] bundle:nil];
-            [self.view addSubview:bar_code_controller.view];
-            [bar_code_controller showDeleteButton:NO];
-            [bar_code_controller showSaveButton:NO];
-            [bar_code_controller showStep:NO];
-        }
-        bar_code_controller.bar_code = [bar_codes objectAtIndex:[index_of_bar_code intValue]];
+        [self update];
+        // bring
     });
     
-    [self.view addSubview:left_button];
-    [self.view addSubview:right_button];
+    // Gesture
+    UISwipeGestureRecognizer *left_ges = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(gestureHandle:)];
+    [left_ges setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:left_ges];
+    
+    UISwipeGestureRecognizer *right_ges = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(gestureHandle:)];
+    [right_ges setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:right_ges];
+
+
+    
 }
 
 - (void) didReceiveMemoryWarning {

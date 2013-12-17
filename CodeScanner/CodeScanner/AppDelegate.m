@@ -13,8 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
+    // navi bar
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 0);
@@ -22,11 +21,16 @@
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
-    
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav-bg"] forBarMetrics:UIBarMetricsDefault];
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0) {
+        // >= ios7
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    }
     
+    // tab bar
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tab-bg"]];
     
+    // another scan
     [[App sharedApp] startNewScan];
     
     return YES;

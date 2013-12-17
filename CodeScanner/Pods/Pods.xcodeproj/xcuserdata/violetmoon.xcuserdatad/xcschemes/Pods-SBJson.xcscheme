@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0500"
+   version = "1.3">
+   <BuildAction
+      buildImplicitDependencies = "YES"
+      parallelizeBuildables = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES">
+            <BuildableReference
+               BlueprintIdentifier = "74F8ACBEC2354F75BF8CCDE4"
+               BuildableName = "libPods-SBJson.a"
+               BuildableIdentifier = "primary"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BlueprintName = "Pods-SBJson">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB">
+      <Testables>
+      </Testables>
+   </TestAction>
+   <LaunchAction
+      ignoresPersistentStateOnLaunch = "NO"
+      launchStyle = "0"
+      allowLocationSimulation = "YES"
+      buildConfiguration = "Debug"
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB">
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = "">
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

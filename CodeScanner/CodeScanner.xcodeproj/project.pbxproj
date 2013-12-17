@@ -386,7 +386,7 @@
 				ORGANIZATIONNAME = violetmoon;
 				TargetAttributes = {
 					13261003182D0958003B756A = {
-						DevelopmentTeam = GG94T2BN8U;
+						DevelopmentTeam = MS53DK4VA2;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;

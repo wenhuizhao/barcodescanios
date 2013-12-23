@@ -19,6 +19,7 @@
 #import "ISqlite.h"
 #import "IDevice.h"
 #import "ZXingObjC.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface HomeController () <ZBarReaderViewDelegate>
 
@@ -227,7 +228,48 @@
     time(&now);
     bar_code.time = [NSString stringWithFormat:@"%.f",(float)now];
     bar_code.count = 1;     // 默认数量
-    
+    if (format == kBarcodeFormatQRCode) {
+        NSString *token, *customerId, *tip;
+        NSArray *strArr = [bar_code.data componentsSeparatedByString:@","];
+        for (NSString *str in strArr) {
+            NSArray *rs = [str componentsSeparatedByString:@":"];
+            if ([(NSString*)[rs objectAtIndex:0] isEqualToString:@"token"]) {
+                token = rs[1];
+            } else if ([(NSString*)[rs objectAtIndex:0] isEqualToString:@"customerId"]) {
+                customerId = rs[1];
+            } else if ([(NSString*)[rs objectAtIndex:0] isEqualToString:@"tip"]) {
+                tip = rs[1];
+            }
+        }
+        NSLog(@"token:%@, customerId:%@, tip:%@",token, customerId, tip);
+        NSString *amount = @"100.0";  //test amount
+        NSURL *url = [NSURL URLWithString:@"http://test.goodchinese.com/transactions"];
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                token, @"transaction[credit_card_token]",
+                                customerId, @"transaction[customer_id]",
+                                amount, @"transaction[amount]",
+                                @"1", @"transaction[submit_for_settlement]",
+                                @"json", @"format",
+                                nil];
+        NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/transactions" parameters: params];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                                                            success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON){
+                                                                                                NSString *status = [NSString stringWithFormat:@"%@", [JSON valueForKeyPath:@"status"]];
+                                                                                                NSLog(@"Response :%@", status);
+                                                                                    
+                                                                                            }
+                                                                                            failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                                                                NSString *errorMsg = [NSString stringWithFormat:@"%@", [JSON valueForKeyPath:@"error"]];
+                                                                                                
+                                                                                                NSLog(@"error:%@", errorMsg);
+                                                                                              
+                                                                                            }
+                                             ];
+        [operation start];
+
+        
+    }
     
     /*判断二维码是否已经扫描过*/
     NSArray *bar_code_ids = [ISqlite findIdsByWhere:[NSString stringWithFormat:@"data = '%@' and scanID = '%@';",bar_code.data,[[App sharedApp] getScanID]] class:[BarCode class]];

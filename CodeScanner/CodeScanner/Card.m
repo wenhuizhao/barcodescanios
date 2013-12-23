@@ -26,12 +26,14 @@
         self.expiryYear = @"";
         self.cardNumber = @"";
         self.redactedCardNumber = @"";
+        self.customerId = @"";
+        self.token = @"";
     }
     return self;
 }
 
 -(void)dealloc{
-    redactedCardNumber=cvv=expiryMonth=expiryYear=cardNumber=nil;
+    redactedCardNumber=cvv=expiryMonth=expiryYear=cardNumber=customerId=token=nil;
 }
 
 @end

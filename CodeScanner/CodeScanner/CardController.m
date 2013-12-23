@@ -11,6 +11,7 @@
 #import "ISqlite.h"
 #import "ZXingObjC.h"
 #import "App.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation CardController{
     CardIOPaymentViewController *card_io_vc;
@@ -70,12 +71,35 @@
 
 -(void) cardNew{
     if (card) {
+        NSURL *url = [NSURL URLWithString:@"http://test.goodchinese.com/credit_cards"];
+        AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                card.cardNumber, @"credit_card[number]",
+                                card.expiryMonth, @"credit_card[expiration_month]",
+                                card.expiryYear, @"credit_card[expiration_year]",
+                                card.cvv, @"credit_card[cvv]",
+                                @"json", @"format",
+                                nil];
+        NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:@"/credit_cards" parameters: params];
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                                                                                            success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON){
+                                                                                                card.customerId = [NSString stringWithFormat:@"%@", [JSON valueForKeyPath:@"customer_id"]];
+                                                                                                card.token = [NSString stringWithFormat:@"%@", [JSON valueForKeyPath:@"token"]];
+                                                                                                NSLog(@"Response :%@, %@", card.customerId, card.token);
+                                                                                                [self QR];
+                                                                                            }
+                                                                                            failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                                                                                NSLog(@"error:%@", error);
+                                                                                                [self QR];
+                                                                                            }
+                                             ];
+        [operation start];
         // save
         [card save];
     }
     
     // qr
-    [self QR];
+    //[self QR];
     
 }
 
@@ -84,9 +108,10 @@
     if (!card) {
         return;
     }
+    [card save];
     NSString *qr_str=@"";
     NSString *qr_data=card.cardNumber;
-    qr_str = [NSString stringWithFormat:@"{\"type\":\"pay\",\"number\":\"%@\",\"tip\":\"%@\"}",qr_data,tip];
+    qr_str = [NSString stringWithFormat:@"token:%@,customerId:%@,tip:%@",card.token, card.customerId,tip];
     UIImage *qr_img;
     
     // new.
